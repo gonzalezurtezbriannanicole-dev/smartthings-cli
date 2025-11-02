@@ -1,50 +1,8 @@
-# Configuration
 
-## Overview
-
-The default CLI configuration can be overridden by creating a YAML file called `config.yaml` in the
-following location:
-
-* `$HOME/.config/@smartthings/cli` on MacOS or Linux
-* `%LOCALAPPDATA%\@smartthings\cli` on Windows
-
-## Profiles
-
-It's possible to define multiple profiles with different configurations.
-
-* Top-level keys define these profiles.
-* The default profile is simply named "default" and will be used unless otherwise
-specified. Most users can simply put their configuration options here.
-* To choose a different profile you can either set the SMARTTHINGS_PROFILE
-environment variable or use the `--profile` (shortcut `-p`) command line
-argument. (When both are used, the command line argument overrides the
-environment variable.)
-
-The [YAML Primer](https://github.com/darvid/trine/wiki/YAML-Primer) is a good source of information
-on YAML. Note, however, some features (like merge keys) have been removed in 1.2. The YAML parser
-we use still supports them, at least for now.
-
-## Configuration Options
-
-The following per-profile config options are supported:
-
-| Option | Default Value | Description |
-| -- | -- | -- |
-| indent | 2 | Indent level for JSON or YAML output. |
-| groupTableOutputRows | true | Separate groups of four rows by a line to make long rows easier to follow across the screen. |
-| organization | none | UUID of the organization to use in applicable CLI commands. |
-| edgeDriverTestDirs | `['test/**', 'tests/**']` | String or array of strings representing files to skip when building an edge driver package. See below for more details. |
-| token | none | Use a bearer token (such as a PAT) for authentication instead of the default login flow. |
-| defaultHub | none (see [Default Values](#default-values)) | The default hub to use for edge commands. |
-| defaultChannel | none (see [Default Values](#default-values)) | The default channel to use for edge commands. |
 
 ## Default Values
 
-When a default value is configured for a hub or a channel, that value is used without question
-for most commands that need one (delete commands are an exception). You can configure these default
-values yourself by specifying them in your config.yaml file or by answering "Yes" when asked if you
-want to make them the default. You can reset all your answers to these questions by running
-the `config:reset` command.
+When a default value 
 
 ## `edgeDriverTestDirs` config option
 
